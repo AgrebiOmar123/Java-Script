@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        input[type=text], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        
+        button {
+          width: 100%;
+          background-color: #4CAF50;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
+        button:hover {
+          background-color: #45a049;
+        }
+        
+        div {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 20px;
+        }
+        </style>
     <script>
         function CtoF() {
-          document.getElementById("c").value =document.getElementById("f").value ;
+          document.getElementById("f").value =((document.getElementById("c").value)-32)*(5/9);
         }
         function ftoC() {
-          document.getElementById("F").value =document.getElementById("c").value ;
+          document.getElementById("c").value =((document.getElementById("f").value)*(9/5))+32 ;
         }
         </script>
 </head>
@@ -18,8 +50,8 @@
     <input type="text" id="c" name="fname">
     <label for="fname">°F</label>
     <input type="text" id="f" name="fname"><br>
-    <button type="button" onclick="myFunction()">C to F</button>
-    <button type="button" onclick="myFunction()">F to C</button>
+    <button type="button" onclick="CtoF()">C to F</button>
+    <button type="button" onclick="ftoC()">F to C</button>
     
   </form> 
 </body>
